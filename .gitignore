@@ -4,3 +4,4 @@ metastore_db
 /data/input/test.csv
 /data/input/destinations.csv
 /data/input/sample_submission.csv
+**derby.log
