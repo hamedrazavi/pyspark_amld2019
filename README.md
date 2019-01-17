@@ -8,7 +8,7 @@ This repository includes the materials for the PySpark workshop in [AMLD2019](ht
 
 #### Mac OS or Linux:
 
-See [INSTALLATION_UNIX.md](.docs/INSTALLATION_UNIX.md) in the `docs` folder. 
+See [INSTALLATION_UNIX.md](./docs/INSTALLATION_UNIX.md) in the `docs` folder. 
 
 #### Windows
 
