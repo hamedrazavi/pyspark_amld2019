@@ -40,4 +40,4 @@ Then:
 
 `pyspark`
 
-This will open a jupyter lab (or notebook) where you can use Spark. See `main.ipynb` as an example. 
+This will open a Jupyter lab (or notebook) where you can use Spark. See `data_processing_pyspark.ipynb` in the `src` folder as an example. 
