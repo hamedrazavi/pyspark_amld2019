@@ -6,7 +6,7 @@ This repository includes the materials for the **PySpark** workshop in [AMLD2019
 
 ### 1.1 Installation:
 
-#### 1.1.1 Method 1: Running PySpark locall (e.g. on your laptop)
+#### 1.1.1 Method 1: Running PySpark locally (e.g. on your laptop)
 
 ##### Mac OS or Linux:
 
