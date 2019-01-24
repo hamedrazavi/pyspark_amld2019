@@ -5,3 +5,4 @@ metastore_db
 /data/input/destinations.csv
 /data/input/sample_submission.csv
 **derby.log
+**.DS_store
