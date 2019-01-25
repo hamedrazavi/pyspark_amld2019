@@ -26,13 +26,15 @@ See [GOOGLECOLAB_README.md](./docs/GOOGLECOLAB_README.md) in the `docs` folder.
 
 #### 1.2.1 Data processing in PySpark
 
-If you run PySpark on your laptop then start with the notebook [data_processing_start.ipynb](./src/data_processing_start.ipynb) in the `src` folder. 
+If you run PySpark on your laptop then start with the notebook [data_processing_start.ipynb](./src/local/data_processing_start.ipynb) in the `src` folder. 
 
-If you run PySpark on Google Colab then start with the notebook [data_processing_gc_start.ipynb](./src/data_processing_gc_start.ipynb) in the `src` folder.
+If you run PySpark on Google Colab then start with the notebook [data_processing_gc_start.ipynb](./src/google_colab/data_processing_gc_start.ipynb) in the `src` folder.
 
 #### 1.2.2 Machine learning in PySpark (MLlib)
 
+If you run PySpark on your laptop then start with the notebook [spark_mllib_start.ipynb](./src/local/spark_mllib_start.ipynb) in the `src` folder. 
 
+If you run PySpark on Google Colab then start with the notebook [spark_mllib_gc_start.ipynb](./src/google_colab/spark_mllib_gc_start.ipynb) in the `src` folder.
 
 ## Part 2: Running PySpark in Jupyter Notebook on Amazon Clusters
 

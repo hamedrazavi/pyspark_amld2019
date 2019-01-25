@@ -1,5 +1,7 @@
 # Running PySpark on a Jupyter notebook on Amazon EMR
 
+## Setting up an EMR cluster
+
 1. **Make an AWS account**: head to Amazon [AWS](https://aws.amazon.com/) and make an account if you don't already have one
 2. In the AWS Management Console type in **S3** click on the first search result to head to the Amazon s3 buckets page. 
 3. Create a new bucket: name it as you wish e.g. pyspark_amld2019_bucket
@@ -20,8 +22,14 @@
 18. In the bootstrap shell script the conda environment `py36` is already set (this is to make sure that you are running the same version of python on master and nodes.); type in`source activate py36`. 
 19. Start jupyter notebook by typing in `pyspark` note the port number of the notebook (e.g. 8889)
 20. Now the jupyter notebook with pyspark is running. In order to access to the notebook on your browser, in a new terminal window type in: `ssh -i <your_aws_key.pem> -L 8000:localhost:8889 hadoop@ec2-3-122-41-171.eu-central-1.compute.amazonaws.com`.  **Note**: Windows users need to do this with [PuTTy](https://www.putty.org/). 
-21. In your browser type in `localhost:8000` (if you are running a notebook with a token you need to copy the token as well, e.g., `localhost:8000/?token=...`). The jupyter notebook running on the cluster is displayed on your browser. Now you can start using PySpark. To check if all is good, in the first cell type in `from pyspark.sql import SparkSession`  and the next line `spark = SparkSession.builder.getOrCreate()` and run the cell. This does not guarantee everything is fine. You need to run some serious spark code in order to make sure all is okay (e.g. run some of the lines of the [data_processing_end.ipynb](../src/data_processing_end.ipynb). 
-22. When needed you can copy data from your Amazon s3 bucket to your EMR local storage by: `aws cp s3://my-bucket//myfile ./myfolder-in-emr` 
-23. You can also copy data from your local system to EMR Hadoop storage by the following command: `cat test.csv | ssh -i <your-aws-key.pem> hadoop@ec2-18-184-114-44.eu-central-1.compute.amazonaws.com "hadoop dfs -put - test.csv"`. This will copy the file `test.csv` to the Hadoop cluster. Note that Spark has direct access to this meaning that to read this with PySpark you could simply use the following command: `spark.read.csv('test.csv')`.
-24. To list all files in your Hadoop cluster type in `hadoop dfs -ls`. 
+21. In your browser type in `localhost:8000` (if you are running a notebook with a token you need to copy the token as well, e.g., `localhost:8000/?token=...`). The jupyter notebook running on the cluster is displayed on your browser. Now you can start using PySpark. To check if all is good, in the first cell type in `from pyspark.sql import SparkSession`  and the next line `spark = SparkSession.builder.getOrCreate()` and run the cell. This does not guarantee everything is fine. You need to run some serious spark code in order to make sure all is okay (e.g. run some of the lines of the [data_processing_end.ipynb](../src/local/data_processing_end.ipynb). 
+
+## Storing, reading data
+
+- The best way to acces data from your PySpark notebook is to store the data in an S3 bucket. For instance, `s3://test-bucket-for-tutorial/train.csv` can be read in PySpark as simple as: `spark.read.csv('s3://test-bucket-for-tutorial/train.csv')`. Note that this data is available automatically across all the nodes!
+- When needed you can copy data from your Amazon s3 bucket to your EMR local storage by: `aws s3 cp s3://my-bucket//myfile ./myfolder-in-emr` 
+
+- You can also copy data (e.g. `test.csv`) from your local system to EMR Hadoop storage by the following command: `cat test.csv | ssh -i <your-aws-key.pem> hadoop@ec2-18-184-114-44.eu-central-1.compute.amazonaws.com "hdfs dfs -put - data.zip"`. This will copy the file `test.csv` to the Hadoop cluster. Note that Spark has direct access to this meaning that to read this with PySpark you could simply use the following command: `spark.read.csv('test.csv')`.
+
+- To list all files in your Hadoop cluster type in `hdfs dfs -ls`. 
 

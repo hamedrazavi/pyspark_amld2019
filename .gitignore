@@ -1,8 +1,5 @@
 .ipynb_checkpoints/
 metastore_db
-/data/input/train.csv
-/data/input/test.csv
-/data/input/destinations.csv
-/data/input/sample_submission.csv
+/data/input/
 **derby.log
 **.DS_store

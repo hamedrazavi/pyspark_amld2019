@@ -2,7 +2,7 @@
 
 From **Andrew Ray** (Spark Contributer)
 
-- Use built-in functions of `spark.sql.functions` (they are much faster: note all behind-the-scene calculations done in Java)
+- Use built-in functions of `spark.sql.functions` (they are much faster: note all behind-the-scene calculations are done in Java)
 
 - **Important**: Use the same version of Python and packages on cluster and driver (can use conda env)
 

@@ -25,7 +25,7 @@ conda create -yn py36 python=3.6
 #-----------------------------------------------------------------------
 # 		Install jupyter in the conda environment
 #-----------------------------------------------------------------------
-conda install -yn py36 -c anaconda jupyter
+conda install -yn py36 anaconda
 
 
 #-----------------------------------------------------------------------
