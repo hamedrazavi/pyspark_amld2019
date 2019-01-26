@@ -50,4 +50,4 @@ where `<env_name>` is the name of your conda environment you made above (e.g., `
 
 `pyspark`
 
-This will open a Jupyter lab (or notebook) where you can use Spark. To test that pyspark is running properly run the notebook [test_pyspark.ipynb](./src/test_pyspark.ipynb) `src` folder as an example. 
+This will open a Jupyter lab (or notebook) where you can use Spark. To test that pyspark is running properly run the notebook [test_pyspark.ipynb](../src/test_pyspark.ipynb) `src` folder as an example. 
